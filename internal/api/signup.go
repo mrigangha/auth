@@ -2,7 +2,6 @@ package api
 
 import (
 	"context"
-	"fmt"
 	"net/http"
 	"time"
 
@@ -151,7 +150,6 @@ func (a *API) Signup(w http.ResponseWriter, r *http.Request) error {
 		if err != nil {
 			return err
 		}
-		fmt.Println("Sign up with email")
 
 		user, err = models.IsDuplicatedEmail(db, params.Email, params.Aud, nil, config.Experimental.ProvidersWithOwnLinkingDomain)
 	case "phone":
