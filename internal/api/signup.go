@@ -106,10 +106,6 @@ func (params *SignupParams) ToUserModel(isSSOUser bool) (user *models.User, err 
 	return user, nil
 }
 
-type SignUpError struct {
-	message string `json:"message"`
-}
-
 // Signup is the endpoint for registering a new user
 func (a *API) Signup(w http.ResponseWriter, r *http.Request) error {
 	ctx := r.Context()
